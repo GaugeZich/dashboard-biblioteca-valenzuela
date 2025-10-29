@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import LibrosForm from './LibrosForm.vue';
 import LibrosList from './LibrosList.vue';
-
 </script>
 
 <template>

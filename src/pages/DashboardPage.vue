@@ -1,9 +1,5 @@
 <script setup lang="ts">
 import Libros from '@/components/Libros.vue';
-import { ref } from 'vue';
-
-
-
 </script>
 
 <template>
