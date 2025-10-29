@@ -1,6 +1,5 @@
+import Libros from '@/components/Libros.vue'
 import DashboardPage from '@/pages/DashboardPage.vue'
-import LibrosForm from '@/pages/LibrosForm.vue'
-import LibrosList from '@/pages/LibrosList.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -8,8 +7,7 @@ const router = createRouter({
   routes: [
     {
       path: '/', component: DashboardPage, children: [
-        {path: '/libros', component: LibrosList},
-        {path: '/libros/nuevo', component: LibrosForm}
+        {path: '/libros', component: Libros},
       ]
     }
   ],

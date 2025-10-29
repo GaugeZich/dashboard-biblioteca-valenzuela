@@ -1,9 +1,8 @@
 <script setup lang="ts">
+import Libros from '@/components/Libros.vue';
 import { ref } from 'vue';
-import { useRoute, RouterView, RouterLink } from 'vue-router'
 
-const route = useRoute()
-/* const routeRef = ref(route) */
+
 
 </script>
 
@@ -14,11 +13,10 @@ const route = useRoute()
                 <h1 class="text-5xl font-bold">Biblioteca Online</h1>
             </div>
             <div class="flex space-x-4">
-                <RouterLink to="/libros">Ver libros</RouterLink>
-                <RouterLink to="/libros/nuevo">Agregar un libro</RouterLink>
             </div>
         </header>
-        <RouterView />
+
+        <Libros></Libros>
     </div>
 </template>
 
