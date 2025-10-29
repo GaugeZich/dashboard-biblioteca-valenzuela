@@ -23,10 +23,14 @@ const resetForm = () => {
     }
 }
 
+const successMessage = ref('')
+
 const handleSubmit = () => {
     store.addLibro({ ...form.value })
     if (!store.error) {
+        successMessage.value = "¡Libro agregado correctamente!"
         resetForm()
+        setTimeout(() => (successMessage.value = ''), 3000)
     }
 }
 
@@ -70,6 +74,14 @@ const handleSubmit = () => {
                     Agregar Libro
                 </button>
             </form>
+
+            <p v-if="successMessage" class="text-emerald-400 text-center mt-4">
+                {{ successMessage }}
+            </p>
+
+            <p v-if="store.error" class="text-red-400 text-center mt-2">
+                {{ store.error }}
+            </p>
         </div>
     </div>
 </template>

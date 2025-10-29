@@ -43,20 +43,32 @@ export const useBibliotecaStore = defineStore('libros', {
             this.error = null
 
             console.log(`✅ Libro agregado con exito. ID: ${libro.id}`)
+        },
+
+        toggleDisponibilidad(libro: Libro) {
+            if(libro.disponible){
+                libro.disponible = false
+            }else{
+                libro.disponible = true
+            }
         }
     },
     getters: {
-        sortDefault() {
-
+        sortDefault: (state): Libro[] => {
+            return [...state.data].sort((a, b) => a.id - b.id)
         },
-        sortByName() {
-
+        sortByName: (state): Libro[] => {
+            return [...state.data].sort((a, b) =>
+                a.titulo.localeCompare(b.titulo)
+            )
         },
-        sortByAuthor() {
-
+        sortByAuthor: (state): Libro[] => {
+            return [...state.data].sort((a, b) =>
+                a.autor.localeCompare(b.autor)
+            )
         },
-        sortByPages() {
-            
+        sortByPages: (state): Libro[] => {
+            return [...state.data].sort((a, b) => a.paginas - b.paginas)
         }
     }
 })
