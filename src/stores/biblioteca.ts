@@ -46,6 +46,9 @@ export const useBibliotecaStore = defineStore('libros', {
         }
     },
     getters: {
+        sortDefault() {
+
+        },
         sortByName() {
 
         },
